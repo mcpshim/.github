@@ -14,9 +14,9 @@
 
 ---
 
-`mcpshim` is a daemon + CLI bridge that centralizes remote MCP server lifecycle in one local process and exposes a consistent Unix socket protocol for scripts and AI agents.
+mcpshim is a lightweight daemon + CLI bridge that lets AI agents register, inspect, and call remote MCP tools through a single local interface.
 
-One daemon handles MCP sessions, auth flows, discovery, and reconnects. Your agent can invoke tools through simple CLI commands or over a Unix domain socket with a JSON protocol.
+One daemon handles MCP sessions, auth flows, discovery, and reconnects. Your agent can invoke tools through simple CLI commands or a Unix domain socket with a JSON protocol.
 
 ```bash
 # Register a remote MCP server
@@ -34,13 +34,10 @@ mcpshim history --server notion --limit 20
 
 ### Repositories
 
-| Repo                                          | Description                    |
-| --------------------------------------------- | ------------------------------ |
-| [mcpshim](https://github.com/mcpshim/mcpshim) | Daemon, CLI, and documentation |
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=mcpshim/mcpshim&type=date&legend=top-left)](https://www.star-history.com/#mcpshim/mcpshim&type=date&legend=top-left)
+| Repo                                          | Description                                  |
+| --------------------------------------------- | -------------------------------------------- |
+| [mcpshim](https://github.com/mcpshim/mcpshim) | Daemon, CLI, and documentation               |
+| [skills](https://github.com/mcpshim/skills)   | Agent skill definitions for AI coding agents |
 
 ### Get Started
 
