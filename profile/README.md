@@ -39,6 +39,14 @@ mcpshim history --server notion --limit 20
 | [mcpshim](https://github.com/mcpshim/mcpshim) | Daemon, CLI, and documentation               |
 | [skills](https://github.com/mcpshim/skills)   | Agent skill definitions for AI coding agents |
 
+### Companion Project
+
+| Repo                                          | Description                                       |
+| --------------------------------------------- | ------------------------------------------------- |
+| [pantalk](https://github.com/pantalk/pantalk) | Give your AI agent a voice on every chat platform |
+
+mcpshim gives your agent tools. [Pantalk](https://pantalk.dev) gives it a voice across Slack, Discord, Telegram, and more.
+
 ### Get Started
 
 ```bash
