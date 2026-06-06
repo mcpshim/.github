@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://mcpshim.dev/icon.svg" alt="mcpshim" width="100" height="100" />
+  <img src="https://mcpshim.dev/icon.svg" alt="MCPShim" width="100" height="100" />
 </p>
 
-<h1 align="center">mcpshim</h1>
+<h1 align="center">MCPShim</h1>
 
 <p align="center">
-  <strong>Turn remote MCP servers into local command workflows.</strong>
+  <strong>Use any MCP server as a standard CLI command.</strong>
 </p>
 
 <p align="center">
@@ -14,9 +14,9 @@
 
 ---
 
-mcpshim is a lightweight daemon + CLI bridge that lets AI agents register, inspect, and call remote MCP tools through a single local interface.
+MCPShim is a lightweight daemon + CLI that turns remote MCP tools into native shell commands your agent or script can call directly.
 
-One daemon handles MCP sessions, auth flows, discovery, and reconnects. Your agent can invoke tools through simple CLI commands or a Unix domain socket with a JSON protocol.
+One daemon handles MCP sessions, auth flows, discovery, and reconnects. Your agent invokes tools as standard CLI commands - no SDKs, no libraries, just shell.
 
 ```bash
 # Register a remote MCP server
@@ -39,13 +39,14 @@ mcpshim history --server notion --limit 20
 | [mcpshim](https://github.com/mcpshim/mcpshim) | Daemon, CLI, and documentation               |
 | [skills](https://github.com/mcpshim/skills)   | Agent skill definitions for AI coding agents |
 
-### Companion Project
+### Companion Projects
 
 | Repo                                          | Description                                       |
 | --------------------------------------------- | ------------------------------------------------- |
 | [pantalk](https://github.com/pantalk/pantalk) | Give your AI agent a voice on every chat platform |
+| [crmkit](https://github.com/crmkit/crmkit)    | An agent-first CRM your AI drives directly        |
 
-mcpshim gives your agent tools. [Pantalk](https://pantalk.dev) gives it a voice across Slack, Discord, Telegram, and more.
+MCPShim gives your agent tools. [Pantalk](https://pantalk.dev) gives it a voice across Slack, Discord, Telegram, and more.
 
 ### Get Started
 
