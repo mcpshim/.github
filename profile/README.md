@@ -16,7 +16,9 @@
 
 MCPShim is a lightweight daemon + CLI that turns remote MCP tools into native shell commands your agent or script can call directly.
 
-One daemon handles MCP sessions, auth flows, discovery, and reconnects. Your agent invokes tools as standard CLI commands - no SDKs, no libraries, just shell.
+One daemon centralizes server registration, auth flows, discovery, call
+execution, and history. Your agent invokes tools as standard CLI commands - no
+SDKs, no libraries, just shell.
 
 ```bash
 # Register a remote MCP server
