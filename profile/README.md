@@ -5,7 +5,7 @@
 <h1 align="center">MCPShim</h1>
 
 <p align="center">
-  <strong>Use any MCP server as a standard CLI command.</strong>
+  <strong>Use any MCP server or HTTP API as a standard CLI command.</strong>
 </p>
 
 <p align="center">
@@ -14,17 +14,16 @@
 
 ---
 
-MCPShim is a lightweight daemon + CLI that turns remote MCP tools into native shell commands your agent or script can call directly.
+MCPShim is a lightweight daemon + CLI that turns remote MCP tools and
+configured HTTP APIs into native shell commands your agent or script can call
+directly.
 
-One daemon centralizes server registration, auth flows, discovery, call
+One daemon centralizes service registration, auth flows, discovery, call
 execution, and history. Your agent invokes tools as standard CLI commands - no
 SDKs, no libraries, just shell.
 
 ```bash
-# Register a remote MCP server
-mcpshim add --name notion --alias notion --transport http --url https://example.com/mcp
-
-# Inspect available tools
+# Inspect a server declared in ~/.config/mcpshim/config.yaml
 mcpshim tools --server notion
 
 # Call a tool
@@ -41,14 +40,13 @@ mcpshim history --server notion --limit 20
 | [mcpshim](https://github.com/mcpshim/mcpshim) | Daemon, CLI, and documentation               |
 | [skills](https://github.com/mcpshim/skills)   | Agent skill definitions for AI coding agents |
 
-### Companion Projects
+### Ecosystem
 
-| Repo                                          | Description                                       |
-| --------------------------------------------- | ------------------------------------------------- |
-| [pantalk](https://github.com/pantalk/pantalk) | Give your AI agent a voice on every chat platform |
-| [crmkit](https://github.com/crmkit/crmkit)    | An agent-first CRM your AI drives directly        |
-
-MCPShim gives your agent tools. [Pantalk](https://pantalk.dev) gives it a voice across Slack, Discord, Telegram, and more.
+| Project                                       | Role                                                           |
+| --------------------------------------------- | -------------------------------------------------------------- |
+| [zot](https://github.com/openzot/openzot)     | Run complete coding tasks autonomously from a single brief     |
+| [Pantalk](https://github.com/pantalk/pantalk) | Connect coding agents to the chat platforms people already use |
+| [crmkit](https://github.com/crmkit/crmkit)    | Give agents a shared CRM and system of record over HTTP or MCP |
 
 ### Get Started
 
@@ -57,8 +55,18 @@ MCPShim gives your agent tools. [Pantalk](https://pantalk.dev) gives it a voice 
 go install github.com/mcpshim/mcpshim/cmd/mcpshimd@latest
 go install github.com/mcpshim/mcpshim/cmd/mcpshim@latest
 
+# Declare a remote MCP server in the source-of-truth config
+mkdir -p ~/.config/mcpshim
+cat > ~/.config/mcpshim/config.yaml <<'YAML'
+servers:
+  - name: notion
+    alias: notion
+    transport: http
+    url: https://mcp.notion.com/mcp
+YAML
+
 # Start daemon and inspect servers/tools
-mcpshimd
+mcpshimd &
 mcpshim servers
 mcpshim tools
 ```
